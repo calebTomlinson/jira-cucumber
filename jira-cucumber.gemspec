@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'jira/cucumber/version'
+require 'jira_formatter/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "jira-cucumber"
-  spec.version       = Jira::Cucumber::VERSION
+  spec.version       = JiraFormatter::VERSION
   spec.authors       = ["Caleb Tomlinson"]
   spec.email         = ["ctomlinson@opentable.com"]
   spec.description   = %q{Jira reporting for cucumber tests}

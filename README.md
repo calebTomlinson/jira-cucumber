@@ -1,4 +1,4 @@
-# Jira::Cucumber
+# JiraFormatter
 
 TODO: Write a gem description
 
