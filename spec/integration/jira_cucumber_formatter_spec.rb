@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'jira_formatter/jira_formatter'
+require 'jira-cucumber'
 
 
   def run_feature(feature_name)
