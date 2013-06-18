@@ -10,9 +10,13 @@ describe JiraFormatter do
   it 'passes' do
   end
   
-  it 'collects the scenario names' do
-    JiraFormatter::Formatter.should_receive(:new)
+  it 'gets instantiated' do
+    JiraFormatter::Formatter.should_receive(:new)     
     run_feature('basic_functionality')
+  end
+  
+  it 'reports the scenario name to jira' do
+    
   end
 end
 
