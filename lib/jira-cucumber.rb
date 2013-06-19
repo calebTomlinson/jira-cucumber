@@ -1,1 +1,1 @@
-require 'jira_formatter/jira_formatter'
+require 'jira_formatter/formatter'
