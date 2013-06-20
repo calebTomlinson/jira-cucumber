@@ -10,3 +10,6 @@ end
 Then(/^it fails$/) do
   raise StandardError
 end
+Given(/^I set a resource (.*)$/) do |resource|
+  $resource = resource
+end
