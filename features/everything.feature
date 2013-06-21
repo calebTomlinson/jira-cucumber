@@ -2,13 +2,13 @@
 Feature: A complicated feature
   
   @basic-scenario-tag
-  Scenario: basic
+  Scenario: passing scenario
     
     Given a passing step with a parameter
     Then it passes
     
   @failing-basic
-  Scenario: failing
+  Scenario: failing scenario
     
     Given a passing step with a parameter
     Then it fails

@@ -12,7 +12,7 @@ module JiraFormatter
     def report(scenarios)
       scenarios.each do |scenario|
         issue = Issue.new(scenario)
-        issue.update
+        #issue.update
       end
     end
   end

@@ -3,6 +3,7 @@ require 'jira_formatter/jira_interface'
 
 module JiraFormatter
   #responds to the cucumber formatter methods and parses the relevant information
+  #only class to talk to cucumber libs!
   class Formatter
     def initialize(step_mother, io, options)
       @step_mother, @io, @options = step_mother, io, options
@@ -56,7 +57,8 @@ module JiraFormatter
     def build_from_example_row(example_row)
       {
           :feature => example_row.scenario_outline.feature.name,
-          :scenario => example_row.scenario_outline.name
+          :scenario => example_row.scenario_outline.name,
+          :row => example_row.name
       }
     end    
   end

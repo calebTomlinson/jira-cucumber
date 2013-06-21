@@ -4,7 +4,7 @@ module JiraFormatter
   class JiraConfiguration
     include Singleton
     
-    attr_accessor :project
+    attr_accessor :project, :default_issue_type, :transitions
     
     def configure
       Jiralicious.load_yml('jiralicious.yml')
