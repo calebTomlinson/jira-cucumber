@@ -55,7 +55,7 @@ module JiraFormatter
     
     def add_comments
       comment = "Test #{@hash[:status]} on #{@hash[:run_time]}\nBuild: http://teamcity/viewLog.html?buildId=#{ENV['teamcity.build.id']}"
-      @jissue.comments add comment
+      @jissue.comments.add comment
     end
   end
 end
