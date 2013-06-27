@@ -23,6 +23,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'jiralicious'
   
   spec.platform      = Gem::Platform::RUBY
-  spec.add_development_dependency 'cucumber', '1.2.1'
+  #spec.add_development_dependency 'cucumber'
   spec.add_development_dependency 'rspec', '> 2.0'
+  spec.add_development_dependency 'vcr', '2.5.0'
 end

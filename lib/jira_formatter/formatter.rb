@@ -5,13 +5,16 @@ module JiraFormatter
   #responds to the cucumber formatter methods and parses the relevant information
   #only class to talk to cucumber libs!
   class Formatter
+    #gets called by cucumber to initialize reporting
     def initialize(step_mother, io, options)
       @step_mother, @io, @options = step_mother, io, options
     end
     
+    #gets called by cucumber after all features have completed
+    #this is the starting point of all reporting
     def after_features(*args)
       @scenarios = failed_and_passed
-      JiraInterface.new.report(format_scenarios)
+      JiraInterface.new.report(formatted_scenarios)
     end
     
     private
@@ -23,12 +26,11 @@ module JiraFormatter
       return failures + passes
     end
 
-    def format_scenarios
+    def formatted_scenarios
       @scenarios.map do |scenario|
         properties = Hash.new()
         properties[:run_time] = Time.new()
         properties[:tags] = scenario.source_tag_names
-
         properties[:status] = scenario.status
         properties[:domain] = determine_domain(scenario)
         if properties[:status] == :failed

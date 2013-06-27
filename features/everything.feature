@@ -2,6 +2,7 @@
 Feature: A complicated feature
   
   @basic-scenario-tag
+  @second-basic-scenario-tag
   Scenario: passing scenario
     
     Given a passing step with a parameter
@@ -20,14 +21,14 @@ Feature: A complicated feature
     Given a passing step with a <param>
     Then it <pass_or_fail>
     
-    @scenarios-tag
+    @scenarios-section-tag
     Scenarios: some scenarios
     | param     | pass_or_fail | resource |
     | parameter | passes       | value_a  |
     | parameter | fails        | value_a  |
     | missing   | irrelevant   | value_a  |
 
-    @examples-tag
+    @examples-section-tag
     Examples: some examples... because we like having two syntaxes
       | param     | pass_or_fail | resource |
       | parameter | passes       | value_b  |
