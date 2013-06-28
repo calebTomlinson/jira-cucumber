@@ -20,7 +20,7 @@ module JiraFormatter
 
     def tags
       if ENV['TEST_ENVIRONMENT']
-        @hash[:tags] + ENV['TEST_ENVIRONMENT']
+        @hash[:tags] + [ENV['TEST_ENVIRONMENT']]
       else
         @hash[:tags]
       end
