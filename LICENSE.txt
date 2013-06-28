@@ -1,4 +1,4 @@
-Copyright (c) 2013 Caleb Tomlinson
+Copyright (c) 2013 OpenTable Inc.
 
 MIT License
 
