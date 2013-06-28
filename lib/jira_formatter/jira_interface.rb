@@ -11,8 +11,11 @@ module JiraFormatter
     
     def report(scenarios)
       scenarios.each do |scenario|
-        issue = Issue.new(scenario)
-        #issue.update
+        begin
+          issue = Issue.new(scenario)
+        rescue => e
+          puts "jira reporting failed for #{scenario}\n#{e.message}\n#{e.backtrace}"
+        end
       end
     end
   end
