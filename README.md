@@ -1,24 +1,38 @@
 # JiraFormatter
 
-TODO: Write a gem description
-
-## Installation
-
-Add this line to your application's Gemfile:
-
-    gem 'jira-cucumber'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install jira-cucumber
+This gem reports cucumber runs to a jira project. It is currenlty open source, but hasn't been generalized much for external consumption yet. It's internals and API will change rapidly for our requirements. So fork away for your own uses or help me stabilize it a bit.
 
 ## Usage
 
-TODO: Write usage instructions here
+bundle exec cucumber --format JiraFormatter::Formatter --out a_file
+
+Be sure to create a jiralicious.yml file in your Cucumber directory.
+
+```yml
+jira:
+  username: username
+  password: password
+  uri: https://host.atlassian.net
+  api_version: 2
+  
+jira_properties:
+  project: 
+    id: 123
+    name: PROJECT
+  default_issue_type:
+    id: 28
+    name: Automation Failure
+  transitions:
+    # current issue status id
+    5:
+      #transition to be applied for given status
+      failed: 21
+    10001:
+      passed: 11
+    6:
+      failed: 21
+```
+
 
 ## Contributing
 
